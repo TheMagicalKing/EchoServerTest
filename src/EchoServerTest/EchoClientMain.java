@@ -1,3 +1,5 @@
+package EchoServerTest;
+
 import java.io.DataInputStream;
 import java.io.DataOutput;
 import java.io.DataOutputStream;
@@ -7,8 +9,8 @@ import java.util.Scanner;
 
 public class EchoClientMain {
 
-    static int port = 5000;
-    static String host = "10.200.176.177";
+    static int port = 8192;
+    static String host = "localhost";
     static DataInputStream in;
     static DataOutputStream out;
     static Socket socket;
@@ -27,11 +29,8 @@ public class EchoClientMain {
                 System.out.println("1 for at lukke clienten");
                 System.out.println("Send a message!");
                 out.writeUTF(msg.nextLine());
+                out.flush();
             }
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
