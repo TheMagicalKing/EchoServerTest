@@ -30,6 +30,7 @@ public class EchoClientMain {
                 System.out.println("Send a message!");
                 out.writeUTF(msg.nextLine());
                 out.flush();
+                System.out.println(in.readUTF());
             }
         } catch (IOException e) {
             e.printStackTrace();

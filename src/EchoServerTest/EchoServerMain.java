@@ -28,6 +28,7 @@ public class EchoServerMain {
           while (true) {
               String hej = in.readUTF();
               System.out.println(hej);
+              out.writeUTF(hej);
 
           }
 

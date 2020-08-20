@@ -13,18 +13,27 @@ public class BMIServer {
     static DataInputStream in;
     static DataOutputStream out;
     static ServerSocket server;
-    static Socket socket;public static void main(String[] args) {
+    static Socket socket;
+    public static void main(String[] args) {
 
         try{
             System.out.println("Server startet");
             server = new ServerSocket(port);
             socket = server.accept();
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
-            int bmiWeight = Integer.parseInt(in.readUTF());
-            int bmiHeight = Integer.parseInt(in.readUTF());
-            int bmiCalculate = bmiHeight + bmiWeight;
-            System.out.println(bmiCalculate);
+
+
+                in = new DataInputStream(socket.getInputStream());
+                out = new DataOutputStream(socket.getOutputStream());
+            while (true) {
+                int bmiWeight = Integer.parseInt(in.readUTF());
+                double bmiHeight = Double.parseDouble(in.readUTF()) / 100;
+                double bmiCalculate = bmiWeight / (bmiHeight * bmiHeight);
+                out.writeDouble(bmiCalculate);
+
+            }
+
+
+
 
 
 

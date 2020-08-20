@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ClientUIMain extends Application {
+public class BMIClientUIMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -14,7 +14,7 @@ public class ClientUIMain extends Application {
         primaryStage.setTitle("BMI Test");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
-        ClientFunctions client = new ClientFunctions();
+        BMIClientFunctions client = new BMIClientFunctions();
         client.clientConnect();
     }
 

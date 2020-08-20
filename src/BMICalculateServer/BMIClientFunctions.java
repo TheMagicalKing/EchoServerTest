@@ -3,6 +3,7 @@ package BMICalculateServer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientFunctions {
+public class BMIClientFunctions {
 
     static int port = 8193;
     static String host = "localhost";
@@ -19,6 +20,8 @@ public class ClientFunctions {
     static Socket socket;
     @FXML
     private TextField inputWeight, inputHeight;
+    @FXML
+    private Text resultBMI;
 
     public void clientConnect() throws IOException{
 
@@ -35,6 +38,9 @@ public class ClientFunctions {
         out.writeUTF(inputWeight.getText());
         out.flush();
         out.writeUTF(inputHeight.getText());
+        //String bmi = in.readUTF();
+        System.out.println(in.readUTF());
+        resultBMI.setText("hej");
 
     }
 }
