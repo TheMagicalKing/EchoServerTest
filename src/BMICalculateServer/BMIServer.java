@@ -24,13 +24,13 @@ public class BMIServer {
 
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());
-            //while (true) {
+            while (true) {
                 int bmiWeight = Integer.parseInt(in.readUTF());
                 double bmiHeight = Double.parseDouble(in.readUTF()) / 100;
                 double bmiCalculate = bmiWeight / (bmiHeight * bmiHeight);
                 out.writeDouble(bmiCalculate);
 
-            //}
+            }
 
 
 

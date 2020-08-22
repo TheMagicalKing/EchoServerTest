@@ -38,9 +38,8 @@ public class BMIClientFunctions {
         out.writeUTF(inputWeight.getText());
         out.flush();
         out.writeUTF(inputHeight.getText());
-        //String bmi = in.readUTF();
-        System.out.println(in.readUTF());
-        resultBMI.setText("hej");
+        double bmi = in.readDouble();
+        resultBMI.setText(String.valueOf(bmi));
 
     }
 }
